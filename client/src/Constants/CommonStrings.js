@@ -18,4 +18,6 @@ export const commonStrings = {
   email: 'Email Address',
   password: 'Password',
   welcomeUsername: username => `Welcome, '${username}!'`,
+  temperature: temperature => `${Math.round(temperature)}°C`,
+  uv: uv => `UV Index: ${Math.round(uv)}`,
 };

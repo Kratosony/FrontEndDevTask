@@ -1,17 +1,52 @@
 import React, { Component } from 'react';
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
 import Button, { constants } from 'Components/Button';
 import TextField from 'Components/TextField';
 import Switch from 'Components/Switch';
+import Weather from 'Components/Weather';
 import { commonStrings } from 'Constants/CommonStrings';
+import { getUserGeolocation, getWeatherDetails } from 'Store/User/UserActions';
 import './Home.scss';
 
 class Home extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            weatherAvailable: false,
+        };
+    }
+    componentDidMount() {
+        const { dispatch } = this.props;
+        const publicIp = require('public-ip');
+        (async () => {
+            dispatch(getUserGeolocation(await publicIp.v4()));
+        })();
+    }
+
+    componentDidUpdate(prevProps) {
+        const { weather } = this.props;
+        if (prevProps.weather !== weather) {
+            this.onWeatherLoaded();
+        }
+    }
+
+    onWeatherLoaded() {
+        this.setState({
+            weatherAvailable: true,
+        });
+    }
+
     render() {
+        const { weatherAvailable } = this.state;
         return (
             <div id="headerContainer">
                 <h1 id="header"> Welcome to MadOwlNews.com</h1>
                 <Button buttonDisplay="Main" buttonColour={constants.backgroundColour.main} />
                 <Button buttonDisplay="Secondary" buttonColour={constants.backgroundColour.secondary} />
+                {weatherAvailable &&
+                    <Weather />
+                }
                 <form>
                     <TextField name="username" placeholder={commonStrings.username} />
                     <TextField inputType="email" name="email" placeholder={commonStrings.email} />
@@ -25,4 +60,17 @@ class Home extends Component {
     }
 }
 
-export default Home;
+const mapStateToProps = (state) => {
+    return {
+        geolocationDetails: state.user.geolocationDetails,
+        weather: state.user.weather,
+    };
+};
+
+Home.propTypes = {
+    dispatch: PropTypes.func.isRequired,
+};
+
+
+export default (connect(mapStateToProps))(Home)
+
