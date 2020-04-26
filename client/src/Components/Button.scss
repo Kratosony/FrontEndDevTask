@@ -1,0 +1,32 @@
+@import 'Colours.scss';
+@import 'Variables.scss';
+
+button {
+  border: none;
+  border-radius: $baseRadius;
+  border-style: none;
+  cursor: pointer;
+  display: inline-block;
+  font-size: $regularFont;
+  padding: 15px 40px;
+  position: relative;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+}
+#main {
+  @extend button;
+  background-color: $buttonMain;
+  color: white;
+  &:hover {
+    background-color: $buttonMainLight;
+    box-shadow: 0 5px 15px $buttonMainShadow;
+  }
+}
+#secondary {
+  @extend button;
+  background-color: $buttonSecondary;
+  &:hover {
+    background-color: $buttonSecondaryLight;
+    box-shadow: 0 5px 15px $buttonSecondaryShadow;
+  }
+}
