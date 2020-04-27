@@ -1,6 +1,45 @@
 @import 'Colours.scss';
+@import 'Variables.scss';
 
-#headerContainer {
-  width: "100%";
-  background-color: $primaryColour;
+.banner {
+  height: 50vh;
+  background-image: 
+  linear-gradient(to right bottom, 
+   $primaryGradient,
+   $secondaryGradient),
+   url('../Assets/slots.jpg');
+background-size: cover;
+  background-position: center;
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 35vh, 0 100%);
+}
+
+.textBox {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.bannerHeaders {
+  color: #fff;
+  text-transform: uppercase;
+
+  backface-visibility: hidden;
+  margin-bottom: 30px;
+}
+
+.bannerPrimaryText {
+  display: block;
+  font-size: $bannerFont;
+  font-weight: 400;
+  letter-spacing: 5px;
+}
+
+.bannerSecondaryText {
+  display: block;
+  font-size: $largeFont;
+  font-weight: 700;
+  letter-spacing: 7.4px;
 }

@@ -12,7 +12,6 @@ button {
   position: relative;
   text-align: center;
   transition: all 0.2s ease-in-out;
-  margin: 10px;
 }
 #main {
   background-color: $buttonMain;
@@ -28,4 +27,16 @@ button {
     background-color: $buttonSecondaryLight;
     box-shadow: 0 5px 15px $buttonSecondaryShadow;
   }
+}
+
+.buttonPair{
+  display: flex;
+  flex-direction: row;
+  padding-top: 20px;
+}
+
+.errorMessage {
+  color: $red;
+  font-size: $smallestFont;
+	margin-bottom: 20px;
 }

@@ -1,11 +1,44 @@
 @import 'Colours.scss';
 @import 'Variables.scss';
 
-.topNav{
-  background-color: $orange;
+.loginPage{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 5vh 5vw 0 5vw;
 }
 
-.title{
-  margin-top: 0;
+.formLeftContainer{
+  width: 40%;
+  display:flex;
+  flex-direction: column;
+  height: 70vh;
+  background-color: $primaryColourOverlay;
+  margin-right: 5vw;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.formImageText{
+  font-size: $largeFont;
+  text-align: center;
+  padding-bottom: 5vh;
+}
+
+.formImageContainer{
+  height: 80%;
+}
+
+.formImage{
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.formContainer{
+  width:60%;
+  background-color: $primaryColourOverlay;
+  border-radius: 5px;
+  padding: 8vh;
 }
 

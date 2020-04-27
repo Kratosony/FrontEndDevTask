@@ -6,20 +6,25 @@ import './Link.scss';
 
 class Link extends Component {
   render() {
-    const { linkTo, name } = this.props;
+    const { linkTo, name, banner } = this.props;
     return (
-      <div class="linkItem">
-        <ReactLink class="linkText" to={linkTo}>
+      <div class={banner ? 'bannerItem' : 'linkItem'}>
+        <ReactLink class="linkText" to={linkTo} >
           {name}
-        </ReactLink>
-      </div>
+        </ReactLink >
+      </div >
     );
   }
 }
 
+Link.defaultProps = {
+  banner: false,
+};
+
 Link.propTypes = {
   linkTo: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
+  banner: PropTypes.bool,
 };
 
 export default Link;

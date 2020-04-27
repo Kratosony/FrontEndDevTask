@@ -4,6 +4,7 @@
 .root{
   background-color: $primaryColour;
   height:100vh;
+  background-image: url("../Assets/background-image.png");
 }
 
 .topNav{
@@ -11,17 +12,22 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding-bottom: 1vh;
-  padding-top: 1vh;
+  padding-bottom: 2vh;
+  padding-top: 2vh;
 }
 
 .weatherContainer{
   width:100%;
-  background-color: $primaryColourOverlay;
+  background-color: $buttonMain;
 }
 
 .title{
+  font-family: 'Bebas Neue','Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
   margin-bottom: 0;
   margin-left: 20px;
   align-self: center;
+  justify-self: center;
+  font-size: $bannerFont;
 }

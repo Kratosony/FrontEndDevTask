@@ -7,13 +7,21 @@
     align-self: center;
     padding: 10px 15px;
     margin-right: 20px;
-    opacity: 1;
     border-radius: $baseRadius;
     background-color: $buttonMain;
       &:hover{
         box-shadow: 0 3px 8px $buttonMainShadow;
       }
+}
+
+.bannerItem {
+  padding: 10px 15px;
+  background-color: $orange;
+  border-radius: $baseRadius;
+  &:hover{
+    box-shadow: 0 3px 8px $orange;
   }
+}
 
 .linkText {
   color: white;

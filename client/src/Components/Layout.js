@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import Link from "Components/Link";
+import Footer from "Components/Footer";
 import { Link as ReactLink } from "react-router-dom";
 import Weather from 'Components/Weather';
 import { getUserGeolocation } from 'Store/User/UserActions';
@@ -41,9 +42,9 @@ class Layout extends Component {
       <div class="root">
         <div class="topNav">
           <ReactLink class="linkText" to={"/"}>
-            <h1 class="title">{commonStrings.betdilla}</h1>
+            <div class="title">{commonStrings.betdilla}</div>
           </ReactLink>
-          <Link class="login" linkTo={"/login"} name={"Login"}></Link>
+          <Link class="login" linkTo={"/login"} name={"Login"} />
         </div>
         <div>
           <div class="weatherContainer">
@@ -53,6 +54,7 @@ class Layout extends Component {
           </div>
           {this.props.children}
         </div>
+        <Footer />
       </div >
     );
   }

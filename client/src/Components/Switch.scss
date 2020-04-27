@@ -1,16 +1,10 @@
 @import 'Colours.scss';
 @import 'Variables.scss';
 
-#inputContainer {
-  display: flex;
-  flex-direction: column;
-  padding-top: 5;
-  padding-bottom: 5;
-}
 input[type='checkbox'] {
     --active: #F2561D;
     --active-inner: #fff;
-    --border: #111626;
+    --border: #F2561D;
     --border-hover: #F2561D;
     --background: #fff;
     -webkit-appearance: none;
