@@ -14,7 +14,6 @@ button {
   transition: all 0.2s ease-in-out;
 }
 #main {
-  @extend button;
   background-color: $buttonMain;
   color: white;
   &:hover {
@@ -23,7 +22,6 @@ button {
   }
 }
 #secondary {
-  @extend button;
   background-color: $buttonSecondary;
   &:hover {
     background-color: $buttonSecondaryLight;

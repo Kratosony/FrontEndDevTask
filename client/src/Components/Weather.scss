@@ -3,40 +3,26 @@
 
 .weatherContainer {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  flex-direction: row;
   border: none;
-  border-radius: $baseRadius;
   border-style: none;
   font-size: $smallFont;
-  padding: 0 5px;
-  background-color: $secondaryColour;
-  width:10vw
+  background-color: $red;
 }
-.weatherIcon {
-  vertical-align: middle;
-  width: 80%;
-  height: 100%;
-  border-radius: 50%;
-  flex-grow: 0;
-}
-.topContainer{
+.imageContainer {
   display:flex;
-  height: 80%;
-  .imageContainer {
-    display:flex;
+  width: 6vw;
+  justify-content: center;
+  .weatherIcon {
+    vertical-align: middle;
+    border-radius: 50%;
+    flex-grow: 0;
+    width: 50%;
   }
 }
-.temperature{
+.weatherDetails{
+  width: 6vw;
+  justify-content: center;
   align-self: center;
-  text-align: center;
-  font-size: $largestFont;
-}
-.uv{
-  display:flex;
-  font-size: $smallFont;
-  align-self: center;
-  text-align: center;
-  padding-bottom: 3px;
-  height: 20%;
+  font-size: $regularFont;
 }

@@ -1,0 +1,21 @@
+@import 'Colours.scss';
+@import 'Variables.scss';
+
+.linkItem {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    padding: 10px 15px;
+    margin-right: 20px;
+    opacity: 1;
+    border-radius: $baseRadius;
+    background-color: $buttonMain;
+      &:hover{
+        box-shadow: 0 3px 8px $buttonMainShadow;
+      }
+  }
+
+.linkText {
+  color: white;
+  text-decoration: none;
+}

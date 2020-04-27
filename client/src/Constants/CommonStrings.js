@@ -1,4 +1,5 @@
 export const commonStrings = {
+  betdilla: 'Betdilla',
   yes: 'Yes',
   no: 'No',
   cancel: 'Cancel',

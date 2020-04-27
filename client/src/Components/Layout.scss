@@ -1,0 +1,27 @@
+@import 'Colours.scss';
+@import 'Variables.scss';
+
+.root{
+  background-color: $primaryColour;
+  height:100vh;
+}
+
+.topNav{
+  background-color: $red;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 1vh;
+  padding-top: 1vh;
+}
+
+.weatherContainer{
+  width:100%;
+  background-color: $primaryColourOverlay;
+}
+
+.title{
+  margin-bottom: 0;
+  margin-left: 20px;
+  align-self: center;
+}
