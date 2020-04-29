@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import Game from "Components/Game";
 import Loading from "Components/Loading";
 import { getGames } from 'Store/Game/GameActions';
+import { compare, compareDescending } from 'Constants/HelperFunctions';
 import './GameBrowser.scss';
 
 class GameBrowser extends Component {
@@ -42,10 +43,20 @@ class GameBrowser extends Component {
     });
   }
 
-  onGamesLoading() {
-    this.setState({
-      gamesAvailable: false,
-    })
+  onSortClick = (e) => {
+    let newList = []
+    if (e.target.value === "SortAscending") {
+      newList = this.state.filtered.sort(compare);
+      this.setState({
+        filtered: newList
+      });
+    }
+    else {
+      newList = this.state.filtered.sort(compareDescending);
+      this.setState({
+        filtered: newList
+      });
+    }
   }
 
   handleChange = (e) => {
@@ -84,17 +95,25 @@ class GameBrowser extends Component {
     const vendorsList = Array.from(new Set(filtered.map(x => x.Vendor)));
     return (
       <div class="gameBrowserContainer">
-        <div class="searchArea">
-          <input type="text" className="input" onChange={this.handleChange} placeholder="Search By Name" />
-          <label for="vendors">Filter By Vendor</label>
-          <select id="vendors" autocomplete="off" onChange={this.handleDropDownChange}>
-            <option value="none">No Filter</option>
-            {
-              vendorsList.map(vendor => (
-                <option>{vendor}</option>
-              ))
-            }
-          </select>
+        <div class="filtersArea">
+          <div class="search">
+            <input type="text" className="input" onChange={this.handleChange} placeholder="Search By Name" />
+          </div>
+          <div class="filter">
+            <label for="vendors">Filter By Vendor</label>
+            <select id="vendors" autocomplete="off" onChange={this.handleDropDownChange}>
+              <option value="none">No Filter</option>
+              {
+                vendorsList.map(vendor => (
+                  <option>{vendor}</option>
+                ))
+              }
+            </select>
+          </div>
+          <div class="sortButtons">
+            <button class="sortButton" value="SortAscending" onClick={this.onSortClick}> Ascending </button>
+            <button class="sortButton" value="SortDescending" onClick={this.onSortClick}> Descending </button>
+          </div>
         </div>
         <div class="gameArea">
           {gamesAvailable &&

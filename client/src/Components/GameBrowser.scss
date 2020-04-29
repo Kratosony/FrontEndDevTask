@@ -8,3 +8,27 @@
   margin: 5vh 5vw;
 }
 
+.filtersArea{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $primaryGradient;
+}
+
+.filter{
+  display: flex;
+  flex-direction: column;
+}
+
+.search{
+  display: flex;
+}
+
+.sortButtons{
+  display: flex;
+}
+.sortButton{
+  border-radius: 0;
+}
+
