@@ -12,6 +12,7 @@ class GameBrowser extends Component {
     this.state = {
       gamesAvailable: false,
       filtered: [],
+      vendorFilter: '',
     };
   }
   componentDidMount() {
@@ -66,20 +67,40 @@ class GameBrowser extends Component {
       filtered: newList
     });
   }
-
+  handleDropDownChange = (e) => {
+    const newList = this.state.filtered.filter(game => game.Vendor === e.target.value);
+    this.setState({
+      vendorFilter: e.target.value,
+      filtered: newList
+    });
+    if (e.target.value === "none") {
+      this.setState({
+        filtered: this.props.games.games
+      })
+    }
+  }
   render() {
-    const { games } = this.props;
     const { gamesAvailable, filtered } = this.state;
+    const vendorsList = Array.from(new Set(filtered.map(x => x.Vendor)));
     return (
       <div class="gameBrowserContainer">
         <div class="searchArea">
           <input type="text" className="input" onChange={this.handleChange} placeholder="Search By Name" />
+          <label for="vendors">Filter By Vendor</label>
+          <select id="vendors" autocomplete="off" onChange={this.handleDropDownChange}>
+            <option value="none">No Filter</option>
+            {
+              vendorsList.map(vendor => (
+                <option>{vendor}</option>
+              ))
+            }
+          </select>
         </div>
         <div class="gameArea">
           {gamesAvailable &&
             filtered.map((item) => {
               return (
-                <Game name={item.Name} description={item.Description} enabled={item.Enabled} />
+                <Game name={item.Name} description={item.Description} enabled={item.Enabled} vendor={item.Vendor} />
               )
             })
           }
@@ -87,7 +108,7 @@ class GameBrowser extends Component {
             <Loading />
           }
         </div>
-      </div>
+      </div >
     )
   }
 }

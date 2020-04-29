@@ -7,6 +7,7 @@ class Game extends Component {
     const {
       name,
       description,
+      vendor,
       enabled,
     } = this.props;
 
@@ -24,6 +25,7 @@ class Game extends Component {
 Game.propTypes = {
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
+  vendor: PropTypes.string.isRequired,
   enabled: PropTypes.bool.isRequired,
 };
 
