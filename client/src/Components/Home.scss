@@ -2,7 +2,8 @@
 @import 'Variables.scss';
 
 .banner {
-  height: 50vh;
+  border-top: 1px solid $orange;
+  min-height: 75vh;
   background-image: 
   linear-gradient(to right bottom, 
    $primaryGradient,
@@ -11,7 +12,6 @@
 background-size: cover;
   background-position: center;
   position: relative;
-  clip-path: polygon(0 0, 100% 0, 100% 35vh, 0 100%);
 }
 
 .textBox {
@@ -25,11 +25,18 @@ background-size: cover;
 .bannerHeaders {
   color: #fff;
   text-transform: uppercase;
-
   backface-visibility: hidden;
-  margin-bottom: 30px;
+  margin-bottom: 3vh;
 }
 
+.bannerCompanyText {
+  display: block;
+  font-size: $bannerCompanyFont;
+  font-weight: 400;
+  letter-spacing: 5px;
+  border-bottom: 1px solid $orange;
+  margin-bottom: 4vh;
+}
 .bannerPrimaryText {
   display: block;
   font-size: $bannerFont;
@@ -43,3 +50,27 @@ background-size: cover;
   font-weight: 700;
   letter-spacing: 7.4px;
 }
+
+.landingPageSection{
+  display: flex;
+  flex-direction: row;
+  min-height: 50vh;
+  text-align: center;
+  border-bottom: 1px solid $orange;
+  border-top: 1px solid $orange;
+  background-image: 
+  linear-gradient(to right bottom, 
+   $subSectionGradient,
+   $subSectionGradient),
+   url('../Assets/oriental-tiles.png');
+   padding-bottom: 3vh;
+}
+
+.feedbackArea{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-color: $primaryGradient;
+  padding: 15vh 2vw;
+}
+

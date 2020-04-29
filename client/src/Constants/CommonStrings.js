@@ -15,4 +15,9 @@ export const commonStrings = {
   bannerSecondary: 'Login now to see our list of Games',
   temperature: temperature => `${Math.round(temperature)}°C`,
   uv: uv => `UV Index: ${Math.round(uv)}`,
+  randomParagraph: 'Since they are still preserved in the rocks for us to see, they must have been formed quite recently, that is, geologically speaking. What can explain these striations and their common orientation? Did you ever hear about the Great Ice Age or the Pleistocene Epoch?',
+  randomParagraph2: 'I recently discovered I could make fudge with just chocolate chips, sweetened condensed milk, vanilla extract, and a thick pot on slow heat. I tried it with dark chocolate chunks and I tried it with semi-sweet chocolate chips. It is better with both kinds.',
+  feedbackParagraph: "Never has online gaming been so fun! Would highly recommend anyone thinking of playing online to join Betdilla now!",
+  feedbackParagraph2: "Most fun I've had in Years. Highly recommended Betdilla to my friends Brad and Leo! They're absolutely loving it",
+  feedbackParagraph3: "¡Lo más divertido que he tenido en años! Muy recomendable. He estado jugando con mi esposo durante el año pasado.",
 };

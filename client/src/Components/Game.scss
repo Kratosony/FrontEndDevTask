@@ -1,14 +1,43 @@
 @import 'Colours.scss';
 @import 'Variables.scss';
 
-.gameContainer{
-  background-color: $orange;
+.gameOverlay{
+  display: flex;
+  flex-wrap: wrap;
+  width: 24%;
+  padding-bottom: 14%;
+  height: 0;
+  margin-bottom: 5%;
+  position: relative;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid $buttonMain;
+  transition-duration: .3s;
+  transition-timing-function: linear;
+  &:hover{
+    box-shadow: 0 -20px 15px -10px $orangeBorder inset,
+              0 20px 15px -10px $orangeBorder inset,
+              0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  &:hover .gameDescription{
+    visibility: visible;
+    opacity: 1;
+  }
 }
 
-.gameOverlay{
-  width: 24%;
-  padding-bottom: 24%; /* Same as width, sets height */
-  margin-bottom: 5%; /* (100-32*3)/2 */
-  position: relative;
-  background-color: $orange;
+.gameDetails{
+  display: flex;
+  flex-direction: column;
+  text-overflow: ellipsis;
+  align-content: space-around;
+}
+
+.gameName{
+  justify-content: center;
+}
+
+.gameDescription{
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s linear;
 }

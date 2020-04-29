@@ -8,7 +8,7 @@
 }
 
 .topNav{
-  background-color: $red;
+  background-color: $primaryColour;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -20,14 +20,25 @@
   width:100%;
   background-color: $buttonMain;
 }
+.weatherContainer p{
+  font-family: $headerFontFamily;
+  font-size: $regularFont;
+  justify-content: flex-start;
+  font-size: 14px;
+  padding: 0 1vw;
+}
+
+.weatherContainer p:not(.weatherDetails){
+flex-direction: row-reverse;
+white-space: nowrap;
+}
 
 .title{
-  font-family: 'Bebas Neue','Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-  sans-serif;
+  font-family: $headerFontFamily;
   margin-bottom: 0;
   margin-left: 20px;
+  font-weight: 500;
   align-self: center;
   justify-self: center;
-  font-size: $bannerFont;
+  font-size: 2em;
 }

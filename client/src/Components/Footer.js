@@ -9,47 +9,42 @@ class Footer extends Component {
                 <div class="spacer" />
                 <footer class="footer">
                     <div class="footerAddress">
-                        <h1>{commonStrings.betdilla} - {commonStrings.companySlogan}</h1>
-                        <h2>Contact</h2>
-                        <address>
-                            5534 Somewhere In. The World 22193-10212
-                    </address>
+                        <h1>{commonStrings.betdilla}</h1>
+                        <h2>{commonStrings.companySlogan}</h2>
+
                     </div>
                     <ul class="footerNav">
                         <li class="navItem">
-                            <h2 class="navTitle">Media</h2>
+                            <h2 class="navTitle">Lorem</h2>
                             <ul class="navList">
                                 <li>
-                                    <a href="#">Online</a>
+                                    <a href="#">Ipsum</a>
                                 </li>
                                 <li>
-                                    <a href="#">Print</a>
+                                    <a href="#">Ipsum</a>
                                 </li>
                                 <li>
-                                    <a href="#">Alternative Ads</a>
+                                    <a href="#">Alternative Ipsum</a>
                                 </li>
                             </ul>
                         </li>
                         <li class="navItem navItem--extra">
-                            <h2 class="navTitle">Technology</h2>
+                            <h2 class="navTitle">Lorem</h2>
                             <ul class="navList navList--extra">
                                 <li>
-                                    <a href="#">Hardware Design</a>
+                                    <a href="#">Ipsum Design</a>
                                 </li>
                                 <li>
-                                    <a href="#">Software Design</a>
+                                    <a href="#">Software Ipsum</a>
                                 </li>
                                 <li>
-                                    <a href="#">Digital Signage</a>
+                                    <a href="#">Ipsum Lorem</a>
                                 </li>
                                 <li>
-                                    <a href="#">Automation</a>
+                                    <a href="#">Abdilla</a>
                                 </li>
                                 <li>
-                                    <a href="#">Artificial Intelligence</a>
-                                </li>
-                                <li>
-                                    <a href="#">IoT</a>
+                                    <a href="#">Lorem Ipsum</a>
                                 </li>
                             </ul>
                         </li>
@@ -69,7 +64,7 @@ class Footer extends Component {
                         </li>
                     </ul>
                     <div class="legal">
-                        <p>&copy; 2020 Something. All rights reserved.</p>
+                        <p>&copy; 2020. All rights reserved.</p>
                     </div>
                 </footer>
             </Fragment>

@@ -1,0 +1,21 @@
+@import 'Colours.scss';
+@import 'Variables.scss';
+
+.subSection{
+  display: block;
+  padding: 0 5vw;
+  align-self: center;
+}
+
+.sectionHeader{
+  text-transform: uppercase;
+  display: block;
+  font-size: $bannerFont;
+  font-weight: 400;
+  letter-spacing: 5px;
+  margin-bottom: 5vh;
+}
+
+.sectionParagraph{
+  font-weight: 100;
+}

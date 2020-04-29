@@ -7,15 +7,17 @@ class Game extends Component {
     const {
       name,
       description,
-      vendor,
-      enabled,
     } = this.props;
 
     return (
       <div class="gameOverlay">
-        <div class="gameContainer">
-          {name}
-          {enabled}
+        <div class="gameDetails">
+          <div class="gameName">
+            <h2>{name}</h2>
+          </div>
+          <div class="gameDescription">
+            <p>{description}</p>
+          </div>
         </div>
       </div>
     )

@@ -1,16 +1,11 @@
 @import "Colours.scss";
 
-.spacer{
-  margin-bottom: 5vh;
-}
-
 .footer {
   display: flex;
   flex-flow: row wrap;
   padding: 30px 30px 20px 30px;
   color: $buttonSecondary;
   background-color: $primaryColour;
-  border-top: 1px solid $buttonMain;
 }
 
 .footer > * {
@@ -96,4 +91,11 @@
   .footerNav {
     flex: 2 0px;
   }
+}
+
+.spacer{
+  height: 4vh;
+  background: rgb(217,208,199);
+  background: linear-gradient(180deg, rgba(217,208,199,1) 64%, rgba(17,22,38,1) 100%);
+  border-top: 1px solid $orange;
 }

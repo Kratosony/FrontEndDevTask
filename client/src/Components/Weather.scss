@@ -8,6 +8,7 @@
   border-style: none;
   font-size: $smallFont;
 }
+
 .imageContainer {
   display:flex;
   width: 6vw;
@@ -18,10 +19,4 @@
     flex-grow: 0;
     width: 50%;
   }
-}
-.weatherDetails{
-  width: 6vw;
-  justify-content: center;
-  align-self: center;
-  font-size: $regularFont;
 }

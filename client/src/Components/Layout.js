@@ -58,17 +58,19 @@ class Layout extends Component {
             <div class="title">{commonStrings.betdilla}</div>
           </ReactLink>
           {loggedIn &&
-            <h1>{loginStrings.welcomeUsername(username)}</h1>
+            <Link class="login" linkTo={"/login"} name={commonStrings.logOut} onClick={this.logOut} />
           }
-          {loggedIn &&
-            <Button buttonDisplay={commonStrings.logOut} buttonColour={constants.backgroundColour.main} onClick={this.logOut} />
+          {!loggedIn &&
+            <Link class="login" linkTo={"/login"} name={"Login"} />
           }
-          <Link class="login" linkTo={"/login"} name={"Login"} />
         </div>
         <div>
           <div class="weatherContainer">
             {weatherAvailable &&
               <Weather />
+            }
+            {loggedIn &&
+              <p>{loginStrings.welcomeUsername(username)}</p>
             }
           </div>
           {this.props.children}

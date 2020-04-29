@@ -47,16 +47,13 @@ class GameBrowser extends Component {
     let newList = []
     if (e.target.value === "SortAscending") {
       newList = this.state.filtered.sort(compare);
-      this.setState({
-        filtered: newList
-      });
     }
     else {
       newList = this.state.filtered.sort(compareDescending);
-      this.setState({
-        filtered: newList
-      });
     }
+    this.setState({
+      filtered: newList
+    });
   }
 
   handleChange = (e) => {
@@ -73,7 +70,6 @@ class GameBrowser extends Component {
     } else {
       newList = this.props.games.games;
     }
-    // Set the filtered state based on what our rules added to newList
     this.setState({
       filtered: newList
     });

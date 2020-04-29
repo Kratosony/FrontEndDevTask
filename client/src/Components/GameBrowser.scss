@@ -5,7 +5,9 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 5vh 5vw;
+  background-color: $primaryGradient;
+  padding: 4vh 4vw;
+  margin: 5vh 6vw;
 }
 
 .filtersArea{

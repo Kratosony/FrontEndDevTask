@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { commonStrings } from "Constants/CommonStrings";
@@ -15,7 +15,7 @@ class Weather extends Component {
     } = this.props;
 
     return (
-      <Fragment>
+      <div class="weatherContainer">
         {weather.map((item) => {
           return (
             <div class="imageContainer">
@@ -25,7 +25,7 @@ class Weather extends Component {
         })}
         <p class="weatherDetails">{commonStrings.temperature(temperature)}</p>
         <p class="weatherDetails">{commonStrings.uv(uv)}</p>
-      </Fragment>
+      </div>
     )
   }
 }
