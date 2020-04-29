@@ -11,7 +11,7 @@ const initialState = {
   uv: -1,
   weather: {},
   username: '',
-  email: '',
+  loggedIn: '',
 };
 
 export default function userReducer(state = initialState, action) {
@@ -29,12 +29,12 @@ export default function userReducer(state = initialState, action) {
     case LOGIN_USER:
       return Object.assign({}, state, {
         username: action.username,
-        email: action.email,
+        loggedIn: action.loggedIn,
       });
     case LOGOUT_USER:
       return Object.assign({}, state, {
         username: '',
-        email: '',
+        loggedIn: action.loggedIn,
       });
     default:
       return state;

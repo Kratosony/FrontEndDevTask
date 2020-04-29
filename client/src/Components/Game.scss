@@ -1,0 +1,14 @@
+@import 'Colours.scss';
+@import 'Variables.scss';
+
+.gameContainer{
+  background-color: $orange;
+}
+
+.gameOverlay{
+  width: 24%;
+  padding-bottom: 24%; /* Same as width, sets height */
+  margin-bottom: 5%; /* (100-32*3)/2 */
+  position: relative;
+  background-color: $orange;
+}

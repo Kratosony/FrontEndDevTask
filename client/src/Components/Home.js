@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from "prop-types";
 import Link from "Components/Link";
 import { commonStrings } from 'Constants/CommonStrings';
 import './Home.scss';
@@ -20,10 +19,4 @@ class Home extends Component {
     }
 }
 
-Home.propTypes = {
-    dispatch: PropTypes.func.isRequired,
-};
-
-
 export default Home
-

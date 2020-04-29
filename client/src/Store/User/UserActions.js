@@ -38,10 +38,13 @@ export function loginUser(username, email, password) {
     username,
     email,
     password,
+    loggedIn: true,
   }
 }
 export function logoutUser() {
   return {
     type: LOGOUT_USER,
+    loggedIn: false,
+
   }
 }

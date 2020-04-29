@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import LoginImage from 'Assets/login.svg';
-import Form from 'Components/Form';
+import LoginForm from 'Components/LoginForm';
+import { loginStrings } from 'Constants/LoginStrings';
 import './Login.scss';
 
 class Login extends Component {
@@ -9,14 +10,14 @@ class Login extends Component {
       <div class="loginPage">
         <div class="formLeftContainer">
           <div class="formImageText">
-            Login to your Betdilla Account Now!
+            {loginStrings.loginInvite}
           </div>
           <div class="formImageContainer">
             <img class="formImage" src={LoginImage} alt="Login Image" />
           </div>
         </div>
         <div class="formContainer">
-          <Form />
+          <LoginForm />
         </div>
       </div>
     )

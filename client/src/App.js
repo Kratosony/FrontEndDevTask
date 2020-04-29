@@ -1,24 +1,54 @@
 import React, { Component } from 'react';
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { Route, Redirect } from "react-router-dom";
+import { ConnectedRouter } from 'connected-react-router'
 import Home from 'Components/Home';
 import Login from 'Components/Login';
 import Layout from 'Components/Layout';
-import { Route, BrowserRouter } from "react-router-dom";
-import { Provider } from "react-redux";
-import store from "Store/Store";
+import GameBrowser from 'Components/GameBrowser';
+import { routes } from 'Constants/Routes';
+import { history } from "Store/Store";
 
 class App extends Component {
     render() {
+        const { loggedIn } = this.props;
         return (
-            <Provider store={store}>
-                <BrowserRouter>
-                    <Layout>
-                        <Route exact path="/" component={Home} />
-                        <Route exact path="/login" component={Login} />
-                    </Layout>
-                </BrowserRouter>
-            </Provider>
+            <ConnectedRouter history={history}>
+                <Layout>
+                    <Route exact path={routes.home} component={
+                        !loggedIn
+                            ? Home
+                            : () => <Redirect to={routes.gameBrowser} />
+                    } />
+                    <Route exact path={routes.login} component={!loggedIn
+                        ? Login
+                        : () => <Redirect to={routes.gameBrowser} />
+                    }
+                    />
+                    <Route
+                        exact path={routes.GameBrowser}
+                        component={
+                            loggedIn
+                                ? GameBrowser
+                                : () => <Redirect to={routes.home} />
+                        }
+                    />
+                </Layout>
+            </ConnectedRouter>
         );
     }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+    return {
+        loggedIn: state.user.loggedIn,
+    };
+};
+
+Layout.propTypes = {
+    loggedIn: PropTypes.bool.isRequired,
+};
+
+
+export default (connect(mapStateToProps))(App)

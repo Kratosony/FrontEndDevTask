@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
+import { push } from 'connected-react-router';
+import Button, { constants } from 'Components/Button';
 import Link from "Components/Link";
 import Footer from "Components/Footer";
 import { Link as ReactLink } from "react-router-dom";
 import Weather from 'Components/Weather';
-import { getUserGeolocation } from 'Store/User/UserActions';
+import { getUserGeolocation, logoutUser } from 'Store/User/UserActions';
 import { commonStrings } from 'Constants/CommonStrings';
+import { loginStrings } from 'Constants/LoginStrings';
+import { routes } from 'Constants/Routes';
 import './Layout.scss';
 
 class Layout extends Component {
@@ -25,9 +29,12 @@ class Layout extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    const { weather } = this.props;
+    const { weather, dispatch } = this.props;
     if (prevProps.weather !== weather) {
       this.onWeatherLoaded();
+    }
+    if (prevProps.loggedIn === true) {
+      dispatch(push(routes.home));
     }
   }
 
@@ -36,14 +43,26 @@ class Layout extends Component {
       weatherAvailable: true,
     });
   }
+
+  logOut = () => {
+    const { dispatch } = this.props;
+    dispatch(logoutUser());
+  }
   render() {
     const { weatherAvailable } = this.state;
+    const { username, loggedIn } = this.props;
     return (
       <div class="root">
         <div class="topNav">
           <ReactLink class="linkText" to={"/"}>
             <div class="title">{commonStrings.betdilla}</div>
           </ReactLink>
+          {loggedIn &&
+            <h1>{loginStrings.welcomeUsername(username)}</h1>
+          }
+          {loggedIn &&
+            <Button buttonDisplay={commonStrings.logOut} buttonColour={constants.backgroundColour.main} onClick={this.logOut} />
+          }
           <Link class="login" linkTo={"/login"} name={"Login"} />
         </div>
         <div>
@@ -64,6 +83,8 @@ const mapStateToProps = (state) => {
   return {
     geolocationDetails: state.user.geolocationDetails,
     weather: state.user.weather,
+    username: state.user.username,
+    loggedIn: state.user.loggedIn,
   };
 };
 

@@ -4,11 +4,11 @@ import './TextField.scss';
 
 class TextField extends Component {
   render() {
-    const { inputType, name, placeholder, handleChange, handleBlur } = this.props;
+    const { inputType, name, placeholder, } = this.props;
     return (
       <div class="inputContainer">
         <label>{placeholder}:</label>
-        <input type={inputType} id={name} name={name} placeholder={placeholder} onChange={handleChange} onBlur={handleBlur} />
+        <input type={inputType} id={name} name={name} placeholder={placeholder} />
       </div>
     )
   }
@@ -25,8 +25,6 @@ TextField.propTypes = {
   placeholder: PropTypes.string,
   inputType: PropTypes.string,
   name: PropTypes.string,
-  handleChange: PropTypes.func.isRequired,
-  handleBlur: PropTypes.func.isRequired,
 };
 
 export default TextField;
