@@ -3,10 +3,10 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { Route, Redirect } from "react-router-dom";
 import { ConnectedRouter } from 'connected-react-router'
-import Home from 'Components/Home';
-import Login from 'Components/Login';
-import Layout from 'Components/Layout';
-import GameBrowser from 'Components/GameBrowser';
+import Home from 'Components/Pages/Home/Home';
+import Login from 'Components/Pages/Login/Login';
+import Layout from 'Components/Layout/Layout';
+import GameBrowser from 'Components/Pages/Game/GameBrowser';
 import { routes } from 'Constants/Routes';
 import { history } from "Store/Store";
 

@@ -11,7 +11,7 @@
   linear-gradient(to right bottom, 
    $primaryGradient,
    $secondaryGradient),
-   url('../Assets/slots.jpg');
+   url('../../../Assets/slots.jpg');
 background-size: cover;
   background-position: center;
   position: relative;
@@ -29,7 +29,7 @@ background-size: cover;
   color: #fff;
   text-transform: uppercase;
   backface-visibility: hidden;
-  margin-bottom: 3vh;
+  margin-bottom: 4vh;
   -webkit-animation-delay: 0.7s;
   -moz-animation-delay: 0.7s;
   animation-delay: 0.7s;
@@ -64,7 +64,7 @@ background-size: cover;
 .bannerSecondaryText {
   display: block;
   font-size: $largeFont;
-  font-weight: 700;
+  font-weight: 1;
   letter-spacing: 7.4px;
 }
 
@@ -79,7 +79,7 @@ background-size: cover;
   linear-gradient(to right bottom, 
    $subSectionGradient,
    $subSectionGradient),
-   url('../Assets/oriental-tiles.png');
+   url('../../../Assets/oriental-tiles.png');
    padding-bottom: 3vh;
 }
 
