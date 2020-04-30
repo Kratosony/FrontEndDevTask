@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import Button, { constants } from 'Components/Button';
-import Game from "Components/Game";
-import Loading from "Components/Loading";
+import Button, { constants } from 'Components/Shared/Button';
+import Game from "Components/Pages/Game/Game";
+import Loading from "Components/Shared/Loading";
 import { getGames } from 'Store/Game/GameActions';
 import { compare, compareDescending } from 'Constants/HelperFunctions';
 import './GameBrowser.scss';

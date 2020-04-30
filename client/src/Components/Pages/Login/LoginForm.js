@@ -3,7 +3,7 @@ import { Formik, Field, Form, ErrorMessage } from 'formik';
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { push } from 'connected-react-router';
-import Button, { constants } from 'Components/Button';
+import Button, { constants } from 'Components/Shared/Button';
 import { commonStrings } from 'Constants/CommonStrings';
 import { loginStrings } from 'Constants/LoginStrings';
 import { validationSchema } from 'Constants/FormValidationSchema';

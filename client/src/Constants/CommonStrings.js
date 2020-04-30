@@ -4,7 +4,7 @@ export const commonStrings = {
   noResults: 'There are no results matching your search criteria.',
   logOut: 'Log Out',
   login: 'Login',
-  companySlogan: 'Bets, Never Regrets ',
+  companySlogan: 'No Regrets, Just Bets',
   bannerSecondary: 'Login now to see our list of Games',
   search: 'Search',
   clearFilters: 'Clear Filters',

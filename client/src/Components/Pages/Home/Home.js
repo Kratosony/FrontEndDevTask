@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Link from "Components/Link";
-import HomeSubSection from "Components/HomeSubSection";
-import FeedbackItem from "Components/FeedbackItem";
+import Link from "Components/Shared/Link";
+import HomeSubSection from "Components/Pages/Home/HomeSubSection";
+import FeedbackItem from "Components/Pages/Home/FeedbackItem";
 import { commonStrings } from 'Constants/CommonStrings';
 import Emily from 'Assets/Emily.jpg';
 import Quentin from 'Assets/Quentin.jpg';
