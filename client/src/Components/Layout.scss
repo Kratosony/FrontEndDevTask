@@ -4,7 +4,11 @@
 .root{
   background-color: $primaryColour;
   height:100%;
-  background-image: url("../Assets/background-image.png");
+  background-image:
+  linear-gradient(to right bottom, 
+  $primaryGradient,
+  $secondaryGradient),
+  url('../Assets/background-image.png');
 }
 
 .topNav{
@@ -16,21 +20,22 @@
   padding-top: 2vh;
 }
 
-.weatherContainer{
+.weatherBar{
   width:100%;
   background-color: $buttonMain;
+  border-bottom: 1px solid $orange;
+  display: flex;
+  flex-direction: row;
+  font-size: $smallFont;
+  color: #fff;
+  justify-content: space-between;
 }
-.weatherContainer p{
+.weatherBar p{
   font-family: $headerFontFamily;
   font-size: $regularFont;
   justify-content: flex-start;
   font-size: 14px;
   padding: 0 1vw;
-}
-
-.weatherContainer p:not(.weatherDetails){
-flex-direction: row-reverse;
-white-space: nowrap;
 }
 
 .title{

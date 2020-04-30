@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
+import Button, { constants } from 'Components/Button';
 import Game from "Components/Game";
 import Loading from "Components/Loading";
 import { getGames } from 'Store/Game/GameActions';
 import { compare, compareDescending } from 'Constants/HelperFunctions';
 import './GameBrowser.scss';
+import { commonStrings } from 'Constants/CommonStrings';
 
 class GameBrowser extends Component {
   constructor(props) {
@@ -14,6 +16,7 @@ class GameBrowser extends Component {
       gamesAvailable: false,
       filtered: [],
       vendorFilter: '',
+      sortedBy: '',
     };
   }
   componentDidMount() {
@@ -45,14 +48,15 @@ class GameBrowser extends Component {
 
   onSortClick = (e) => {
     let newList = []
-    if (e.target.value === "SortAscending") {
+    if (e.target.value === commonStrings.ascending) {
       newList = this.state.filtered.sort(compare);
     }
     else {
       newList = this.state.filtered.sort(compareDescending);
     }
     this.setState({
-      filtered: newList
+      filtered: newList,
+      sortedBy: e.target.value
     });
   }
 
@@ -76,15 +80,26 @@ class GameBrowser extends Component {
   }
   handleDropDownChange = (e) => {
     const newList = this.state.filtered.filter(game => game.Vendor === e.target.value);
-    this.setState({
-      vendorFilter: e.target.value,
-      filtered: newList
-    });
     if (e.target.value === "none") {
       this.setState({
-        filtered: this.props.games.games
+        filtered: this.props.games.games,
+        vendorFilter: e.target.value,
       })
     }
+    else {
+      this.setState({
+        vendorFilter: e.target.value,
+        filtered: newList
+      });
+    }
+  }
+
+  clearFilter = () => {
+    this.setState({
+      filtered: this.props.games.games,
+      vendorFilter: '',
+      sortedBy: '',
+    })
   }
   render() {
     const { gamesAvailable, filtered } = this.state;
@@ -93,10 +108,12 @@ class GameBrowser extends Component {
       <div class="gameBrowserContainer">
         <div class="filtersArea">
           <div class="search">
-            <input type="text" className="input" onChange={this.handleChange} placeholder="Search By Name" />
+            <label>{commonStrings.search}</label>
+            <input type="text" className="input" onChange={this.handleChange} placeholder={commonStrings.search} />
           </div>
+          <Button buttonDisplay={commonStrings.clearFilters} buttonColour={constants.backgroundColour.main} onClick={this.clearFilter} />
           <div class="filter">
-            <label for="vendors">Filter By Vendor</label>
+            <label for="vendors">{commonStrings.filterVendor}</label>
             <select id="vendors" autocomplete="off" onChange={this.handleDropDownChange}>
               <option value="none">No Filter</option>
               {
@@ -107,17 +124,23 @@ class GameBrowser extends Component {
             </select>
           </div>
           <div class="sortButtons">
-            <button class="sortButton" value="SortAscending" onClick={this.onSortClick}> Ascending </button>
-            <button class="sortButton" value="SortDescending" onClick={this.onSortClick}> Descending </button>
+            <Button buttonDisplay={commonStrings.ascending} buttonColour={constants.backgroundColour.secondary} onClick={this.onSortClick} />
+            <Button buttonDisplay={commonStrings.descending} buttonColour={constants.backgroundColour.secondary} onClick={this.onSortClick} />
           </div>
         </div>
+        <h1>
+          {commonStrings.games}
+        </h1>
         <div class="gameArea">
-          {gamesAvailable &&
+          {gamesAvailable && filtered.length > 0 &&
             filtered.map((item) => {
               return (
                 <Game name={item.Name} description={item.Description} enabled={item.Enabled} vendor={item.Vendor} />
               )
             })
+          }
+          {gamesAvailable && filtered.length === 0 &&
+            <h1 class="noResults">{commonStrings.noResults}</h1>
           }
           {!gamesAvailable &&
             <Loading />

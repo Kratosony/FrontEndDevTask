@@ -1,49 +1,126 @@
 @import 'Colours.scss';
 @import 'Variables.scss';
 
-.buttonPair{
-  display: flex;
-  flex-direction: row;
-  padding-top: 20px;
+@-webkit-keyframes shake-horizontal {
+  0%,
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70% {
+    -webkit-transform: translateX(-10px);
+            transform: translateX(-10px);
+  }
+  20%,
+  40%,
+  60% {
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
+  }
+  80% {
+    -webkit-transform: translateX(8px);
+            transform: translateX(8px);
+  }
+  90% {
+    -webkit-transform: translateX(-8px);
+            transform: translateX(-8px);
+  }
+}
+@keyframes shake-horizontal {
+  0%,
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70% {
+    -webkit-transform: translateX(-10px);
+            transform: translateX(-10px);
+  }
+  20%,
+  40%,
+  60% {
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
+  }
+  80% {
+    -webkit-transform: translateX(8px);
+            transform: translateX(8px);
+  }
+  90% {
+    -webkit-transform: translateX(-8px);
+            transform: translateX(-8px);
+  }
+}
+
+
+.formGroup{
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	margin-bottom: 3vh;
 }
 
 .inputContainer {
   display: flex;
-  flex-direction: column;
+	flex-direction: column;
+	justify-content: space-around;
   padding-top: 5;
   padding-bottom: 5;
 }
+
+.formButton{
+  justify-content: center;
+  display: flex;
+  margin-bottom: 3vh;
+}
+.formFooter{
+  justify-content: center;
+  display: flex;
+  border-top: 1px solid $orange;
+}
+
+.formGroup{
 input[type="text"],
 input[type="password"],
 input[type="email"] {
 	background: rgba(255,255,255,.1);
+	align-self: center;
 	border: none;
 	border-radius: 4px;
 	font-size: 15px;
 	margin: 0;
 	outline: 0;
 	padding: 10px;
-	width: 100%;
+	width: 70%;
 	box-sizing: border-box; 
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box; 
-	background-color: #e8eeef;
-	color:#8a97a0;
+	background-color: $cream;
+	color:$primaryColour;
 	-webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
 	box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
 	margin-bottom: 10px;
 }
-.form-style-5 input[type="text"]:focus,
-.form-style-5 input[type="password"]:focus,
-.form-style-5 input[type="email"]:focus{
-	background: #d2d9dd;
+}
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus{
+	background: #8e9599;
 }
 label {
   font-family: $headerFontFamily;
-  padding-bottom: 3;
+	padding-bottom: 3;
 }
 .errorMessage {
   color: $red;
-  font-size: $smallestFont;
+  font-size: $smallFont;
 	margin-bottom: 20px;
+	-webkit-animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+	animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 }

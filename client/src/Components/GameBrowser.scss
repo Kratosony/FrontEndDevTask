@@ -1,30 +1,85 @@
 @import 'Colours.scss';
 @import 'Variables.scss';
 
-.gameArea{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  background-color: $primaryGradient;
-  padding: 4vh 4vw;
-  margin: 5vh 6vw;
-}
+.gameBrowserContainer{
+  padding-bottom: 5vh;
+  background-image: 
+  linear-gradient(to right bottom, 
+   $subSectionGradient,
+   $subSectionGradient),
+   url('../Assets/oriental-tiles.png');
+   h1:not(.noResults){
+     text-align: center;
+     color: $white;
+     font-size: $bannerCompanyFont;
+     font-weight: 400;
+     letter-spacing: 5px;
+   }
+  }
 
 .filtersArea{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: $primaryGradient;
+  background-color: $white;
+}
+
+.gameArea{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border-radius: $baseRadius;
+  background-color: $white;
+  padding: 4vh 4vw;
+  margin: 5vh 6vw 0 6vw;
+  -webkit-box-shadow: -4px -4px 22px -1px rgba(17,22,38,0.53);
+  -moz-box-shadow: -4px -4px 22px -1px rgba(17,22,38,0.53);
+  box-shadow: -4px -4px 22px -1px rgba(17,22,38,0.53);
 }
 
 .filter{
   display: flex;
   flex-direction: column;
+  padding: 10px;
+  select{
+    font-size: $regularFont;
+    font-family: sans-serif;
+    font-weight: 700;
+    color: #444;
+    padding: 10px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+    border-radius: $baseRadius;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+  }
 }
 
 .search{
   display: flex;
+  flex-direction: column;
+  width: 40%;
+  padding: 10px;
+  input{
+    border: none;
+    border-radius: $baseRadius;
+    font-size: $regularFont;
+    margin: 0;
+    outline: 0;
+    padding: 10px;
+    width: 70%;
+    box-sizing: border-box; 
+    background-color: $cream;
+    color:$primaryColour;
+    -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    margin-bottom: 10px;
+  }
 }
 
 .sortButtons{

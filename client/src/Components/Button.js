@@ -29,7 +29,7 @@ class Button extends Component {
 
     return (
       <div>
-        <button type={buttonType} id={buttonColourSelection} onClick={onClick}> {buttonDisplay} </button>
+        <button type={buttonType} id={buttonColourSelection} onClick={onClick} value={buttonDisplay}> {buttonDisplay} </button>
       </div>
     )
   }

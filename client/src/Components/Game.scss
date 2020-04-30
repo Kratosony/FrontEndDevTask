@@ -6,17 +6,22 @@
   flex-wrap: wrap;
   width: 24%;
   padding-bottom: 14%;
-  height: 0;
   margin-bottom: 5%;
+  height: 100px;
   position: relative;
   justify-content: center;
   text-align: center;
-  border: 1px solid $buttonMain;
+  border: 1px solid $orange;
   transition-duration: .3s;
   transition-timing-function: linear;
+  background-image: 
+  linear-gradient(to right bottom, 
+   $creamGradient,
+   $creamGradient),
+   url('../Assets/white-background.png');
   &:hover{
-    box-shadow: 0 -20px 15px -10px $orangeBorder inset,
-              0 20px 15px -10px $orangeBorder inset,
+    box-shadow: 0 -20px 15px -10px $orangeShadow inset,
+              0 20px 15px -10px $orangeShadow inset,
               0 0 10px rgba(0, 0, 0, 0.1);
   }
   &:hover .gameDescription{
@@ -40,4 +45,7 @@
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s, opacity 0.5s linear;
+  p{
+    font-size: 0.65vw;
+  }
 }

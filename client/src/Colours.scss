@@ -3,15 +3,16 @@ $primaryColourOverlay: #84878D;
 $orange: #F2561D;
 $red: #F21628;
 $buttonMain: #5067B3;
-$buttonSecondary: #f7fafc;
+$white: #f7fafc;
 $cream:#D9D0C7;
 
-$orangeBorder: rgba(242, 86, 29,.3);
+$orangeShadow: rgba(242, 86, 29,.3);
 $buttonMainShadow: rgba(80, 103, 179, .4);
 $subSectionGradient: rgba(80, 103, 179, .8);
-$buttonSecondaryShadow: rgba(247, 250, 252, .4);
 $primaryGradient: rgba(17, 22, 38, .8);
 $secondaryGradient: rgba(26, 24, 61, .8);
+$creamGradient: rgba(217, 208, 199, .8);
+
 
 $buttonMainLight: lighten($buttonMain, 5%);
-$buttonSecondaryLight: lighten($buttonSecondary, 5%);
+$orangeLight: lighten($orange, 5%);

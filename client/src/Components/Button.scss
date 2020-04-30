@@ -13,19 +13,19 @@ button {
   text-align: center;
   transition: all 0.2s ease-in-out;
   margin: 10px;
+  color: white;
 }
 #main {
   background-color: $buttonMain;
-  color: white;
   &:hover {
     background-color: $buttonMainLight;
     box-shadow: 0 5px 15px $buttonMainShadow;
   }
 }
 #secondary {
-  background-color: $buttonSecondary;
+  background-color: $orange;
   &:hover {
-    background-color: $buttonSecondaryLight;
-    box-shadow: 0 5px 15px $buttonSecondaryShadow;
+    background-color: $orangeLight;
+    box-shadow: 0 5px 15px $orangeShadow;
   }
 }

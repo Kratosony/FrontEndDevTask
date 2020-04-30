@@ -8,14 +8,6 @@ class Login extends Component {
   render() {
     return (
       <div class="loginPage">
-        <div class="formLeftContainer">
-          <div class="formImageText">
-            {loginStrings.loginInvite}
-          </div>
-          <div class="formImageContainer">
-            <img class="formImage" src={LoginImage} alt="Login Image" />
-          </div>
-        </div>
         <div class="formContainer">
           <LoginForm />
         </div>

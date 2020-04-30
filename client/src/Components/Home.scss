@@ -1,8 +1,11 @@
 @import 'Colours.scss';
 @import 'Variables.scss';
 
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
 .banner {
-  border-top: 1px solid $orange;
   min-height: 75vh;
   background-image: 
   linear-gradient(to right bottom, 
@@ -27,6 +30,19 @@ background-size: cover;
   text-transform: uppercase;
   backface-visibility: hidden;
   margin-bottom: 3vh;
+  -webkit-animation-delay: 0.7s;
+  -moz-animation-delay: 0.7s;
+  animation-delay: 0.7s;
+  opacity:0;
+  -webkit-animation:fadeIn ease-in 1;
+  -moz-animation:fadeIn ease-in 1;
+  animation:fadeIn ease-in 1;
+  -webkit-animation-fill-mode:forwards;
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+  -webkit-animation-duration:1s;
+  -moz-animation-duration:1s;
+  animation-duration:1s;
 }
 
 .bannerCompanyText {
@@ -37,6 +53,7 @@ background-size: cover;
   border-bottom: 1px solid $orange;
   margin-bottom: 4vh;
 }
+
 .bannerPrimaryText {
   display: block;
   font-size: $bannerFont;

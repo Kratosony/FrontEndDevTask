@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { push } from 'connected-react-router';
-import Button, { constants } from 'Components/Button';
 import Link from "Components/Link";
 import Footer from "Components/Footer";
 import { Link as ReactLink } from "react-router-dom";
@@ -65,7 +64,7 @@ class Layout extends Component {
           }
         </div>
         <div>
-          <div class="weatherContainer">
+          <div class="weatherBar">
             {weatherAvailable &&
               <Weather />
             }

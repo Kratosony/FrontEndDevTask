@@ -28,26 +28,29 @@ class LoginForm extends Component {
         onSubmit={fields => {
           this.loginRequest(fields.username, fields.email, fields.password);
         }}
-        render={({ errors, status, touched }) => (
+        render={({ errors, touched }) => (
           <Form>
-            <div className="form-group">
+            <h1>{commonStrings.login}</h1>
+            <div class="formGroup">
               <label htmlFor="username">{loginStrings.username}</label>
-              <Field name="username" type="text" className={'form-control' + (errors.username && touched.username ? ' is-invalid' : '')} />
+              <Field name="username" type="text" />
               <ErrorMessage name="username" component="div" class="errorMessage" />
             </div>
-            <div className="form-group">
+            <div class="formGroup">
               <label htmlFor="email">{loginStrings.email}</label>
-              <Field name="email" type="text" className={'form-control' + (errors.email && touched.email ? ' is-invalid' : '')} />
+              <Field name="email" type="text" />
               <ErrorMessage name="email" component="div" class="errorMessage" />
             </div>
-            <div className="form-group">
+            <div class="formGroup">
               <label htmlFor="password">{loginStrings.password}</label>
-              <Field name="password" type="password" className={'form-control' + (errors.password && touched.password ? ' is-invalid' : '')} />
+              <Field name="password" type="password" />
               <ErrorMessage name="password" component="div" class="errorMessage" />
             </div>
-            <div class="buttonPair">
-              <Button submit buttonDisplay={commonStrings.submit} buttonColour={constants.backgroundColour.main} />
-              <Button buttonDisplay={commonStrings.cancel} buttonColour={constants.backgroundColour.secondary} />
+            <div class="formButton">
+              <Button submit buttonDisplay={commonStrings.submit} buttonColour={constants.backgroundColour.secondary} />
+            </div>
+            <div class="formFooter">
+              <h2>{commonStrings.betdilla}</h2>
             </div>
           </Form>
         )}
@@ -56,16 +59,9 @@ class LoginForm extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    geolocationDetails: state.user.geolocationDetails,
-    weather: state.user.weather,
-  };
-};
-
 LoginForm.propTypes = {
   dispatch: PropTypes.func.isRequired,
 };
 
 
-export default (connect(mapStateToProps))(LoginForm)
+export default (connect())(LoginForm)

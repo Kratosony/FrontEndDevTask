@@ -18,8 +18,10 @@
   padding: 10px 15px;
   background-color: $orange;
   border-radius: $baseRadius;
+  transition: all .2s;
   &:hover{
-    box-shadow: 0 3px 8px $orange;
+    box-shadow: 0 2px 6px $orange;
+    transform: translateY(-3px);
   }
 }
 
