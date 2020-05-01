@@ -46,6 +46,10 @@ const mapStateToProps = (state) => {
     };
 };
 
+Layout.defaultProps = {
+    loggedIn: false,
+}
+
 Layout.propTypes = {
     loggedIn: PropTypes.bool.isRequired,
 };

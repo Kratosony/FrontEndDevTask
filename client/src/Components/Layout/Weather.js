@@ -18,8 +18,8 @@ class Weather extends Component {
       <div class="weatherContainer">
         {weather.map((item) => {
           return (
-            <div class="imageContainer">
-              <img key={item.id} src={GET_WEATHER_ICON(item.icon)} alt={item.description} class="weatherIcon" />
+            <div key={item.id} class="imageContainer">
+              <img src={GET_WEATHER_ICON(item.icon)} alt={item.description} class="weatherIcon" />
             </div>
           )
         })}
@@ -43,18 +43,18 @@ Weather.defaultProps = {
   icon: '',
   temperature: 0,
   uv: 0,
-  weather: {},
+  weather: []
 };
+
 Weather.propTypes = {
   temperature: PropTypes.number.isRequired,
   uv: PropTypes.number.isRequired,
-  weather: PropTypes.shape({
-    weather: PropTypes.arrayOf(PropTypes.shape({
-      main: PropTypes.string.isRequired,
-      description: PropTypes.string.isRequired,
-      icon: PropTypes.string.isRequired,
-    }))
-  }),
+  weather: PropTypes.arrayOf(PropTypes.shape({
+    main: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    icon: PropTypes.string.isRequired,
+  })
+  ),
 };
 
 export default (connect(mapStateToProps))(Weather)

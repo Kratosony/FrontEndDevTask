@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import LoginImage from 'Assets/login.svg';
 import LoginForm from 'Components/Pages/Login/LoginForm';
-import { loginStrings } from 'Constants/LoginStrings';
 import './Login.scss';
 
 class Login extends Component {

@@ -10,12 +10,14 @@ class Game extends Component {
     } = this.props;
 
     return (
-      <div class="gameOverlay">
-        <div class="gameDetails">
-          <div class="gameName">
+      <div class="game">
+        <div class="face face1">
+          <div class="content">
             <h2>{name}</h2>
           </div>
-          <div class="gameDescription">
+        </div>
+        <div class="face face2">
+          <div class="content">
             <p>{description}</p>
           </div>
         </div>
@@ -28,7 +30,6 @@ Game.propTypes = {
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   vendor: PropTypes.string.isRequired,
-  enabled: PropTypes.bool.isRequired,
 };
 
 export default Game;

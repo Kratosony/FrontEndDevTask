@@ -16,7 +16,6 @@ class GameBrowser extends Component {
       gamesAvailable: false,
       filtered: [],
       vendorFilter: '',
-      sortedBy: '',
     };
   }
   componentDidMount() {
@@ -56,7 +55,6 @@ class GameBrowser extends Component {
     }
     this.setState({
       filtered: newList,
-      sortedBy: e.target.value
     });
   }
 
@@ -98,7 +96,6 @@ class GameBrowser extends Component {
     this.setState({
       filtered: this.props.games.games,
       vendorFilter: '',
-      sortedBy: '',
     })
   }
   render() {
@@ -109,16 +106,16 @@ class GameBrowser extends Component {
         <div class="filtersArea">
           <div class="search">
             <label>{commonStrings.search}</label>
-            <input type="text" className="input" onChange={this.handleChange} placeholder={commonStrings.search} />
+            <input type="text" class="input" onChange={this.handleChange} placeholder={commonStrings.search} />
           </div>
           <Button buttonDisplay={commonStrings.clearFilters} buttonColour={constants.backgroundColour.main} onClick={this.clearFilter} />
           <div class="filter">
-            <label for="vendors">{commonStrings.filterVendor}</label>
-            <select id="vendors" autocomplete="off" onChange={this.handleDropDownChange}>
+            <label htmlFor="vendors">{commonStrings.filterVendor}</label>
+            <select id="vendors" autoComplete="off" onChange={this.handleDropDownChange}>
               <option value="none">No Filter</option>
               {
                 vendorsList.map(vendor => (
-                  <option>{vendor}</option>
+                  <option key={vendor}>{vendor}</option>
                 ))
               }
             </select>
@@ -135,7 +132,7 @@ class GameBrowser extends Component {
           {gamesAvailable && filtered.length > 0 &&
             filtered.map((item) => {
               return (
-                <Game name={item.Name} description={item.Description} enabled={item.Enabled} vendor={item.Vendor} />
+                <Game key={item.GameId} name={item.Name} description={item.Description} enabled={item.Enabled} vendor={item.Vendor} />
               )
             })
           }
